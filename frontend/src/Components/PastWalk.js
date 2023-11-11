@@ -19,7 +19,7 @@ export default function PastWalk(props) {
                     alignItems="center"
                     spacing={1}
                 >
-                    <h4>{props.dogName}</h4>
+                    <h4>{props.dogName} par {props.walker}</h4>
                     <p>{props.walkDate} - {props.walkDistance}</p>
                     <p>{props.startHour} - {props.endHour} ({props.walkDuration})</p>
                 </Stack>
