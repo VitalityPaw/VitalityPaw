@@ -2,7 +2,6 @@ import Header from "./Components/Header"
 import oneDog from "./Images/oneDog.svg";
 import Footer from "./Components/Footer"
 
-
 function App() {
   return (
     <>
