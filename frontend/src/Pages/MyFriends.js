@@ -8,9 +8,9 @@ import { Box } from '@mui/system';
 
 export default function MyFriends() {
     const friendsData = [
-        { number: 1, name: 'Fluffy', xp: 2000 },
-        { number: 2, name: 'Buddy', xp: 1800 },
-        { number: 3, name: 'Whiskers', xp: 1600 },
+        { number: 1, name: 'Pépite', xp: 2000 },
+        { number: 2, name: 'Milo', xp: 1800 },
+        { number: 3, name: 'Anino', xp: 1600 },
         { number: 4, name: 'Spot', xp: 1400 },
         { number: 5, name: 'Mittens', xp: 1200 },
         { number: 6, name: 'Rocky', xp: 1000 },
