@@ -32,7 +32,7 @@ router.post('/addPet', async (req, res) => {
 });
 
 // Route to get the ID of an existing pet
-router.get('/getPetId/:petName', async (req, res) => {
+router.get('/getPet/:petName', async (req, res) => {
   try {
     const { petName } = req.params;
 
@@ -43,9 +43,7 @@ router.get('/getPetId/:petName', async (req, res) => {
       return res.status(404).json({ success: false, message: 'Pet not found.' });
     }
 
-    const petId = existingPet._id;
-
-    res.json({ success: true, petId });
+    res.json({ success: true, existingPet });
   } catch (error) {
     console.error('Error getting pet ID:', error.message);
     res.status(500).json({ success: false, message: 'Error getting pet ID.' });
