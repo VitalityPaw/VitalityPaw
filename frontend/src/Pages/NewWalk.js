@@ -1,5 +1,4 @@
 import * as React from "react";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
