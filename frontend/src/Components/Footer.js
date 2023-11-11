@@ -2,7 +2,6 @@ import AddIcon from '@mui/icons-material/Add';
 import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import IconButton from '@mui/material/IconButton';
-import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import PeopleIcon from '@mui/icons-material/People';
 import Stack from '@mui/material/Stack';
 import SvgIcon from '@mui/material/SvgIcon';
@@ -27,9 +26,6 @@ export default function Footer() {
         >
             <IconButton aria-label="my walks" style={{ fontSize: '3rem' }} onClick={() => { window.location.href = "/my-walks" }}>
                 <DirectionsWalkIcon fontSize="inherit" />
-            </IconButton>
-            <IconButton aria-label="vet" style={{ fontSize: '3rem' }}>
-                <LocalHospitalIcon fontSize="inherit" />
             </IconButton>
             <IconButton aria-label="friends" style={{ fontSize: '3rem' }} onClick={() => { window.location.href = "/my-friends" }}>
                 <PeopleIcon fontSize="inherit" />
