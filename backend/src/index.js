@@ -14,6 +14,7 @@ connectDatabase();
 
 // Use itinerary routes
 app.use('/api', itineraryRoutes);
+app.use('/api', petRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
