@@ -36,7 +36,7 @@ export default function Header(props) {
                 <h1>{props.name}</h1>
             </IconButton>
             <IconButton onClick={handleOpenUserMenu}>
-                <Avatar sx={{ height: '70px', width: '70px' }} style={{ fontSize: '2rem' }} alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar sx={{ height: '70px', width: '70px' }} style={{ fontSize: '2rem' }} alt="Remy Sharp" src="gigi.png" />
             </IconButton>
             <Menu
                 sx={{ mt: '45px' }}
