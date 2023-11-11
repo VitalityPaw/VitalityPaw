@@ -52,6 +52,17 @@ router.get('/getPetId/:petName', async (req, res) => {
   }
 });
 
+// Route to get all pets
+router.get('/getPets', async (req, res) => {
+  try {
+    const pets = await Pet.find();
+    res.json({ success: true, pets });
+  } catch (error) {
+    console.error('Error getting pets:', error.message);
+    res.status(500).json({ success: false, message: 'Error getting pets.' });
+  }
+});
+
 // Route to add an itinerary to a pet
 router.post('/addItineraryToPet/:petName', async (req, res) => {
   try {
