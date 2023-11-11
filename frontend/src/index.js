@@ -15,13 +15,14 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<App hat={false} />} />
         <Route path="/my-achievements" element={<MyAchievements />} />
         <Route path="/my-friends" element={<MyFriends />} />
         <Route path="/my-walks" element={<MyWalks />} />
         <Route path="/share" element={<Share />} />
         <Route path="/new-walk" element={<NewWalk />} />
         <Route path="/pet-profile" element={<PetProfile />} />
+        <Route path="/hat" element={<App hat={true} />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </BrowserRouter>

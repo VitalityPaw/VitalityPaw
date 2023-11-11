@@ -1,9 +1,9 @@
 import Home from "./Pages/Home";
 
-function App() {
+function App(props) {
   return (
     <>
-      <Home />
+      <Home hat={props.hat} />
     </>
   );
 }
