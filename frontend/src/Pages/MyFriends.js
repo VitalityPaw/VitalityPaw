@@ -46,7 +46,7 @@ export default function MyFriends() {
                         {friendsData.map((friend) => (
                             <Friend number={friend.number} name={friend.name} xp={friend.xp} />
                         ))}
-                </Stack>
+                    </Stack>
                 </Box>
             </div>
 
