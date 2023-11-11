@@ -1,7 +1,7 @@
 import * as React from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-import oneDog from "../Images/oneDog.svg";
+import rocky from "../Images/rocky.png";
 
 export default function Home() {
     return (
@@ -13,7 +13,7 @@ export default function Home() {
             <div style={{
                 minHeight: "64vh", backgroundColor: "#FFF4EF"
             }}>
-                <img src={oneDog} alt="logo" style={{
+                <img src={rocky} alt="logo" style={{
                     maxHeight: "40vh", display: "block", marginLeft: "auto", marginRight: "auto"
                 }} onClick={() => { window.location.href = "/pet-profile" }}
                 />
