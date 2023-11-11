@@ -18,12 +18,6 @@ export default function Home(props) {
                 minHeight: "64vh", backgroundColor: "#FFF4EF"
             }}>
                 <a href="/pet-profile">
-                    {/* <img src={rocky} alt="Rocky" style={{
-                        maxHeight: "40vh", display: "block", marginLeft: "auto", marginRight: "auto"
-                    }}
-                    /> */}
-                    {/* if props==false use rocky, else use rockywithhat */}
-                    {console.log(hat)}
                     <img src={hat ? rockywithhat : rocky} alt="Rocky" style={{
                         maxHeight: "40vh", display: "block", marginLeft: "auto", marginRight: "auto"
                     }}
