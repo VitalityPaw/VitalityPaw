@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import bronzeCup from "../Images/bronzeCup.png";
 import silverCup from "../Images/silverCup.png";
 import goldCup from "../Images/goldCup.png";
+import cameleon from "../Images/icone_cameleon.png";
 import pup1 from "../Images/rsc/bernese_2.png";
 import pup2 from "../Images/rsc/bernese.png";
 import pup3 from "../Images/rsc/labrador_2.png";
@@ -30,7 +31,7 @@ const Friend = ({ number, name, xp }) => {
     cupImage = bronzeCup;
   } else {
     // You can provide a default image or handle other cases here
-    cupImage = { number };
+    cupImage = cameleon;
   }
 
   switch (number) {
@@ -72,7 +73,7 @@ const Friend = ({ number, name, xp }) => {
     <Box display="flex" alignItems="center" marginBottom={2}>
       <div style={{ left: 150, width: "64px" }}>
         {/* Display the cup image */}
-        <img src={cupImage} alt={` `} style={{ width: '32px', height: '32px' }} />
+        <img src={cupImage} alt={`${number}`} style={{ width: '32px', height: '32px' }} />
       </div>
       <Avatar alt={name} src={pupAvatar} style={{ width: '64px', height: '64px' }} />
       <Box marginLeft={2}>
