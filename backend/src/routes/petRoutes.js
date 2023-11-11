@@ -31,7 +31,7 @@ router.post('/addPet', async (req, res) => {
   }
 });
 
-// Route to get the ID of an existing pet
+// Route to get an existing pet from their name
 router.get('/getPet/:petName', async (req, res) => {
   try {
     const { petName } = req.params;
@@ -45,8 +45,8 @@ router.get('/getPet/:petName', async (req, res) => {
 
     res.json({ success: true, existingPet });
   } catch (error) {
-    console.error('Error getting pet ID:', error.message);
-    res.status(500).json({ success: false, message: 'Error getting pet ID.' });
+    console.error('Error getting pet:', error.message);
+    res.status(500).json({ success: false, message: 'Error getting pet.' });
   }
 });
 
@@ -62,7 +62,7 @@ router.get('/getPets', async (req, res) => {
 });
 
 // Route to add an itinerary to a pet
-router.post('/addItineraryToPet/:petName', async (req, res) => {
+router.post('/addItinerary/:petName', async (req, res) => {
   try {
     const { petName } = req.params;
     const { name, locations, startdate, enddate } = req.body;
@@ -99,7 +99,7 @@ router.post('/addItineraryToPet/:petName', async (req, res) => {
 });
 
 // Route to get all itineraries associated with a pet
-router.get('/getPetItineraries/:petName', async (req, res) => {
+router.get('/petItineraries/:petName', async (req, res) => {
   try {
     const { petName } = req.params;
 
@@ -118,7 +118,7 @@ router.get('/getPetItineraries/:petName', async (req, res) => {
 });
 
 // Route to add XP to a pet
-router.post('/addXpToPet/:petName', async (req, res) => {
+router.post('/addXp/:petName', async (req, res) => {
   try {
     const { petName } = req.params;
     const { xpToAdd } = req.body;
