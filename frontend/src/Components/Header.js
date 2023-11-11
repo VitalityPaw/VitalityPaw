@@ -6,8 +6,7 @@ import logo_with_text from '../Images/logo_with_text.png'
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-
-const settings = ['Mon profil', 'Se déconnecter', 'Aide'];
+import { Link } from 'react-router-dom';
 
 export default function Header(props) {
 
@@ -55,11 +54,18 @@ export default function Header(props) {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
             >
-                {settings.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
-                ))}
+                <MenuItem key='Mon profil' onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Mon profil</Typography>
+                </MenuItem>
+                <MenuItem key='Partager mon QR Code' component={Link} to="/share">
+                    <Typography textAlign="center">Partager mon code QR</Typography>
+                </MenuItem>
+                <MenuItem key='Se déconnecter' onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Se déconnecter</Typography>
+                </MenuItem>
+                <MenuItem key='Aide' onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Aide</Typography>
+                </MenuItem>
             </Menu>
         </Stack>
 
