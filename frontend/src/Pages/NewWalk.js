@@ -6,6 +6,8 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Stack from '@mui/material/Stack';
 import StopIcon from '@mui/icons-material/Stop';
 import SimpleMap from "../Components/SimpleMap";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 export default function NewWalk() {
 
@@ -28,34 +30,36 @@ export default function NewWalk() {
 
     return (
         <>
-            <Stack
-                direction="column"
-                justifyContent="space-around"
-                alignItems="center"
-                spacing={2}
-            >
-                <h1>NewWalk</h1>
-                <SimpleMap />
-                <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                    <Button
-                        onClick={() => {
-                            startTime = Date.now();
-                            console.log(convertTimeToDate(startTime));
-                        }}
-                    ><PlayArrowIcon /></Button>
-                    <Button
-                        onClick={() => {
-                            endTime = Date.now();
-                            console.log(convertTimeToDate(endTime));
-                            walkDuration = endTime - startTime;
-                            console.log(convertTime(walkDuration));
-                        }}
-                    ><StopIcon /></Button>
-                </ButtonGroup>
-                {/* have the footer once it will be done instead of the button*/}
-                <Button variant="contained" href="/"><ArrowBackIcon /></Button>
-            </Stack>
-
+            <Header name="Nouvelle Balade" />
+            <div style={{
+                minHeight: "64vh", backgroundColor: "#FFF4EF"
+            }}>
+                <Stack
+                    direction="column"
+                    justifyContent="space-around"
+                    alignItems="center"
+                    spacing={2}
+                >
+                    <SimpleMap />
+                    <ButtonGroup variant="contained" aria-label="outlined primary button group">
+                        <Button
+                            onClick={() => {
+                                startTime = Date.now();
+                                console.log(convertTimeToDate(startTime));
+                            }}
+                        ><PlayArrowIcon /></Button>
+                        <Button
+                            onClick={() => {
+                                endTime = Date.now();
+                                console.log(convertTimeToDate(endTime));
+                                walkDuration = endTime - startTime;
+                                console.log(convertTime(walkDuration));
+                            }}
+                        ><StopIcon /></Button>
+                    </ButtonGroup>
+                </Stack>
+            </div>
+            <Footer />
         </>
     );
 }

@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 const settings = ['Mon profil', 'Se déconnecter', 'Aide'];
 
-export default function Header() {
+export default function Header(props) {
 
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -22,46 +22,46 @@ export default function Header() {
     };
 
     return (
-            
-    <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        spacing={1}
-        sx={{backgroundColor: "#FFF4EF", height: "16vh"}}
-    >
-        <IconButton disabled>
-            <img src={logo_with_text} width="96" height="auto"/>
-         </IconButton>
-        <IconButton disabled>
-            <h1>Rocky</h1>
-        </IconButton>
-        <IconButton onClick={handleOpenUserMenu}>
-            <Avatar sx={{ height: '70px', width: '70px' }} style={{ fontSize: '2rem' }} alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-        </IconButton>
-        <Menu
-            sx={{ mt: '45px' }}
-            id="menu-appbar"
-            anchorEl={anchorElUser}
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-    </Stack>
+
+        <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            spacing={1}
+            sx={{ backgroundColor: "#FFF4EF", height: "16vh" }}
+        >
+            <IconButton disabled>
+                <img src={logo_with_text} width="96" height="auto" />
+            </IconButton>
+            <IconButton disabled>
+                <h1>{props.name}</h1>
+            </IconButton>
+            <IconButton onClick={handleOpenUserMenu}>
+                <Avatar sx={{ height: '70px', width: '70px' }} style={{ fontSize: '2rem' }} alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+            </IconButton>
+            <Menu
+                sx={{ mt: '45px' }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+            >
+                {settings.map((setting) => (
+                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                        <Typography textAlign="center">{setting}</Typography>
+                    </MenuItem>
+                ))}
+            </Menu>
+        </Stack>
 
     );
 }
