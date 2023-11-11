@@ -26,8 +26,7 @@ const itinerarySchema = new mongoose.Schema({
     required: true,
   },
   pet: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Pet',
+    type: String,
     required: true,
   },
 });

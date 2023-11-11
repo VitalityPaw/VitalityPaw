@@ -75,7 +75,7 @@ router.post('/addItineraryToPet/:petName', async (req, res) => {
       locations,
       startdate: startDateObject,
       enddate: endDateObject,
-      pet: pet._id, // Associate the itinerary with the pet
+      pet: pet.name, // Associate the itinerary with the pet
     });
 
     // Add the itinerary to the pet's itineraryList
@@ -86,6 +86,25 @@ router.post('/addItineraryToPet/:petName', async (req, res) => {
   } catch (error) {
     console.error('Error adding itinerary to pet:', error.message);
     res.status(500).json({ success: false, message: 'Error adding itinerary to pet.' });
+  }
+});
+
+// Route to get all itineraries associated with a pet
+router.get('/getPetItineraries/:petName', async (req, res) => {
+  try {
+    const { petName } = req.params;
+
+    // Find the pet by name and populate its itineraryList
+    const pet = await Pet.findOne({ name: petName }).populate('itineraryList');
+
+    if (!pet) {
+      return res.status(404).json({ success: false, message: 'Pet not found.' });
+    }
+
+    res.json({ success: true, itineraries: pet.itineraryList });
+  } catch (error) {
+    console.error('Error getting pet itineraries:', error.message);
+    res.status(500).json({ success: false, message: 'Error getting pet itineraries.' });
   }
 });
 
