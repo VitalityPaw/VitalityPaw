@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import PastWalk from "../Components/PastWalk";
-
 import itinary1 from "../Images/itinary1.png";
 import itinary2 from "../Images/itinary2.png";
 import itinary3 from "../Images/itinary3.png";
