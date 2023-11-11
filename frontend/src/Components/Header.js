@@ -57,8 +57,11 @@ export default function Header(props) {
                 <MenuItem key='Mon profil' onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Mon profil</Typography>
                 </MenuItem>
-                <MenuItem key='Partager mon QR Code' component={Link} to="/share">
+                <MenuItem key='Partager mon code QR' component={Link} to="/share">
                     <Typography textAlign="center">Partager mon code QR</Typography>
+                </MenuItem>
+                <MenuItem key='Lire un code QR' onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Lire un code QR</Typography>
                 </MenuItem>
                 <MenuItem key='Se déconnecter' onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Se déconnecter</Typography>
