@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import Stack from '@mui/material/Stack';
 import rocky from "../Images/rocky.png";
+import { Button } from "@mui/material";
 
 export default function UserProfile() {
     return (
@@ -54,8 +55,7 @@ export default function UserProfile() {
                         direction="column"
                         justifyContent="space-around"
                         alignItems="center"
-                        spacing={2}
-                    >
+                        spacing={2}>
                         <h2>Chiens</h2>
                         <p>Rocky</p>
                         <img src={rocky} alt="logo" style={{
@@ -63,6 +63,15 @@ export default function UserProfile() {
                         }} onClick={() => { window.location.href = "/pet-profile" }}
                         />
                     </Stack>
+                </Stack>
+                <Stack
+                    direction="column"
+                    justifyContent="space-around"
+                    alignItems="center"
+                    spacing={2}
+                    sx={{ paddingTop: 2 }}
+                >
+                    <Button variant="contained" onClick={() => { window.location.href = "/add-pet" }}>Ajouter un chien</Button>
                 </Stack>
             </Box >
             <Footer />
