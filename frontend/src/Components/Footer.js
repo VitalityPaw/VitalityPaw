@@ -34,7 +34,7 @@ export default function Footer() {
             <IconButton aria-label="friends" style={{ fontSize: '3rem' }} onClick={() => { window.location.href = "/my-friends" }}>
                 <PeopleIcon fontSize="inherit" />
             </IconButton>
-            <IconButton aria-label="friends" style={{ fontSize: '3rem' }} onClick={() => { window.location.href = "/" }}>
+            <IconButton style={{ fontSize: '3rem' }} onClick={() => { window.location.href = "/" }}>
                 <HomeIcon fontSize="inherit" />
             </IconButton>
             <IconButton aria-label="achievements" style={{ fontSize: '3rem' }} onClick={() => { window.location.href = "/my-achievements" }}>
