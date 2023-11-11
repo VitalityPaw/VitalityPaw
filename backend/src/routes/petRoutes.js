@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Pet = require('../models/pet');
 const Itinerary = require('../models/itinerary');
+const Achievement = require('../models/achievement');
 
 // Route to create a pet profile
 router.post('/addPet', async (req, res) => {
@@ -138,6 +139,49 @@ router.post('/addXp/:petName', async (req, res) => {
   } catch (error) {
     console.error('Error adding XP to pet:', error.message);
     res.status(500).json({ success: false, message: 'Error adding XP to pet.' });
+  }
+});
+
+// Route to add achievement to achievement list
+router.post('/addAchievement/:petName', async (req, res) => {
+  try {
+    const { petName } = req.params;
+    const achievementAdd = req.body;
+
+    const pet = await Pet.findOne({ name: petName });
+    const achievement = await Achievement.findById(achievementAdd._id);
+
+    if (!petName) {
+      return res.status(404).json({ success: false, message: 'Pet not found'});
+    }
+    if (!achievement) {
+      return res.status(404).json({ success: false, message: 'Achievement not found'});
+    }
+
+    pet.achievements.push(achievement._id);
+    pet.save();
+    res.json({ success: true, message: `added ${achievement.name} to ${pet.name}.`, pet });
+  } catch (error) {
+    console.error('Error adding achievement to pet:', error.message);
+    res.status(500).json({ success: false, message: 'Error adding achievement to pet'});
+  }
+});
+
+// Route to get all pet's achievements
+router.get('/getAchievements/:petName', async (req, res) => {
+  try {
+    const { petName } = req.params;
+
+    const pet = await Pet.findOne({ name: petName });
+
+    if (!petName) {
+      return res.status(404).json({ success: false, message: 'Pet not found'});
+    }
+
+    res.json({ success: true, message: pet.achievements });
+  } catch (error) {
+    console.error('Error get all the pet achievement', error.message);
+    res.status(500).json({ success: false, message: 'Error get all the pet achievements'});
   }
 });
 
