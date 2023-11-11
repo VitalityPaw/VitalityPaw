@@ -5,6 +5,7 @@ import MyAchievements from './Pages/MyAchievements';
 import MyFriends from './Pages/MyFriends';
 import MyWalks from './Pages/MyWalks';
 import NewWalk from './Pages/NewWalk';
+import PetProfile from './Pages/PetProfile';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
@@ -14,10 +15,11 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/new-walk" element={<NewWalk />} />
-        <Route path="/my-friends" element={<MyFriends />} />
         <Route path="/my-achievements" element={<MyAchievements />} />
+        <Route path="/my-friends" element={<MyFriends />} />
         <Route path="/my-walks" element={<MyWalks />} />
+        <Route path="/new-walk" element={<NewWalk />} />
+        <Route path="/pet-profile" element={<PetProfile />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </BrowserRouter>

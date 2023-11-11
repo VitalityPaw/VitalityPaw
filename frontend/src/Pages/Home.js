@@ -15,7 +15,7 @@ export default function Home() {
             }}>
                 <img src={oneDog} alt="logo" style={{
                     maxHeight: "40vh", display: "block", marginLeft: "auto", marginRight: "auto"
-                }}
+                }} onClick={() => { window.location.href = "/pet-profile" }}
                 />
             </div>
             <Footer />
