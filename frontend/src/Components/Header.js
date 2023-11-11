@@ -54,7 +54,7 @@ export default function Header(props) {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
             >
-                <MenuItem key='Mon profil' onClick={handleCloseUserMenu}>
+                <MenuItem key='Mon profil' component={Link} to="/user-profile">
                     <Typography textAlign="center">Mon profil</Typography>
                 </MenuItem>
                 <MenuItem key='Partager mon code QR' component={Link} to="/share">
