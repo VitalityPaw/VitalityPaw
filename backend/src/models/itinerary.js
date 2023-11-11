@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const itinerarySchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: false,
   },
   locations: [
     {
@@ -17,6 +17,18 @@ const itinerarySchema = new mongoose.Schema({
       },
     },
   ],
+  startdate: {
+    type: Date,
+    required: true,
+  },
+  enddate: {
+    type: Date,
+    required: true,
+  },
+  pet: {
+    type: String,
+    required: true,
+  },
 });
 
 const Itinerary = mongoose.model('Itinerary', itinerarySchema);
