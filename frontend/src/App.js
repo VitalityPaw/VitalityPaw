@@ -12,40 +12,43 @@ import logo from './logo.png';
 function App() {
   return (
     <>
-      <MenuAppBar />
       <div style={{
-        minHeight: "100vh", backgroundColor: "#FFF4EF"
+          minHeight: "100vh", backgroundColor: "#FFF4EF"
       }}>
-        <img src={oneDog} alt="logo" style={{
-          maxHeight: "40vh", display: "block", marginLeft: "auto", marginRight: "auto"
-        }}
-        />
+        <MenuAppBar />
+        <div style={{
+          minHeight: "72vh", backgroundColor: "#FFF4EF"
+        }}>
+          <img src={oneDog} alt="logo" style={{
+            maxHeight: "40vh", display: "block", marginLeft: "auto", marginRight: "auto"
+          }}
+          />
+        </div>
+        <Stack
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          spacing={3}
+          sx={{backgroundColor: "#C6EAA5", borderTopLeftRadius: "30px", borderTopRightRadius: "30px", height: "20vh"}}
+        >
+          <IconButton aria-label="walk" style={{ fontSize: '3rem' }}>
+            <DirectionsWalkIcon fontSize="inherit" />
+          </IconButton>
+          <IconButton aria-label="vet" style={{ fontSize: '3rem' }}>
+            <LocalHospitalIcon fontSize="inherit" />
+          </IconButton>
+          <IconButton aria-label="people" style={{ fontSize: '3rem' }}>
+            <PeopleIcon fontSize="inherit" />
+          </IconButton>
+          <IconButton aria-label="events" style={{ fontSize: '3rem' }}>
+            <EmojiEventsIcon fontSize="inherit" />
+          </IconButton>
+          <IconButton aria-label="add" style={{ fontSize: '3rem' }}>
+            <AddIcon fontSize="inherit" />
+          </IconButton>
+
+        </Stack>
       </div>
-      <Stack
-        direction="row"
-        justifyContent="space-around"
-        alignItems="stretch"
-        spacing={2}
-        sx={{ backgroundColor: "#C6EAA5", borderRadius: "20px", margin: "10vw", position: "absolute", bottom: "0", left: "0", right: "0", textAlign: "center" }}
-
-      >
-        <IconButton aria-label="walk" size="large">
-          <DirectionsWalkIcon fontSize="inherit" />
-        </IconButton>
-        <IconButton aria-label="vet" size="large">
-          <LocalHospitalIcon fontSize="inherit" />
-        </IconButton>
-        <IconButton aria-label="people" size="large">
-          <PeopleIcon fontSize="inherit" />
-        </IconButton>
-        <IconButton aria-label="events" size="large">
-          <EmojiEventsIcon fontSize="inherit" />
-        </IconButton>
-        <IconButton aria-label="add" size="large">
-          <AddIcon fontSize="inherit" />
-        </IconButton>
-
-      </Stack>
     </>
   );
 }
