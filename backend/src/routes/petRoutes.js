@@ -108,4 +108,28 @@ router.get('/getPetItineraries/:petName', async (req, res) => {
   }
 });
 
+// Route to add XP to a pet
+router.post('/addXpToPet/:petName', async (req, res) => {
+  try {
+    const { petName } = req.params;
+    const { xpToAdd } = req.body;
+
+    // Find the pet by name
+    const pet = await Pet.findOne({ name: petName });
+
+    if (!pet) {
+      return res.status(404).json({ success: false, message: 'Pet not found.' });
+    }
+
+    // Add XP to the pet
+    pet.XP += xpToAdd;
+    await pet.save();
+
+    res.json({ success: true, message: `Added ${xpToAdd} XP to ${pet.name}.`, pet });
+  } catch (error) {
+    console.error('Error adding XP to pet:', error.message);
+    res.status(500).json({ success: false, message: 'Error adding XP to pet.' });
+  }
+});
+
 module.exports = router;
