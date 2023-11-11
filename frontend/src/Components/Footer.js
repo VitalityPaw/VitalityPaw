@@ -5,7 +5,15 @@ import IconButton from '@mui/material/IconButton';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import PeopleIcon from '@mui/icons-material/People';
 import Stack from '@mui/material/Stack';
+import SvgIcon from '@mui/material/SvgIcon';
 
+function HomeIcon(props) {
+    return (
+      <SvgIcon {...props}>
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+      </SvgIcon>
+    );
+  }
 
 export default function Footer() {
 
@@ -25,6 +33,9 @@ export default function Footer() {
             </IconButton>
             <IconButton aria-label="friends" style={{ fontSize: '3rem' }} onClick={() => { window.location.href = "/my-friends" }}>
                 <PeopleIcon fontSize="inherit" />
+            </IconButton>
+            <IconButton aria-label="friends" style={{ fontSize: '3rem' }} onClick={() => { window.location.href = "/" }}>
+                <HomeIcon fontSize="inherit" />
             </IconButton>
             <IconButton aria-label="achievements" style={{ fontSize: '3rem' }} onClick={() => { window.location.href = "/my-achievements" }}>
                 <EmojiEventsIcon fontSize="inherit" />
