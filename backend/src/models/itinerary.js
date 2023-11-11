@@ -17,6 +17,14 @@ const itinerarySchema = new mongoose.Schema({
       },
     },
   ],
+  startdate: {
+    type: Date,
+    required: true,
+  },
+  enddate: {
+    type: Date,
+    required: true,
+  },
 });
 
 const Itinerary = mongoose.model('Itinerary', itinerarySchema);

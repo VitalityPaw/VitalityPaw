@@ -18,18 +18,15 @@ const petSchema = new mongoose.Schema({
     required: true,
   },
   itineraryList: {
-    type: [Schema.Types.ObjectId],
+    type: [{ type: Schema.Types.ObjectId, ref: 'Itinerary' }],
     required: true,
-    ref: 'Itierary',
     default: [],
   },
-  achievement: {
-    type: [Schema.Types.ObjectId],
+  achievements: {
+    type: [{ type: Schema.Types.ObjectId, ref: 'Achievement' }],
     required: true,
-    ref: 'Achievement',
     default: [],
   }
-  
 });
 
 const Pet = mongoose.model('Pet', petSchema);
