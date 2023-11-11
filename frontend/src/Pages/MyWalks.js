@@ -23,7 +23,7 @@ export default function MyWalks() {
 
     return (
         <>
-            <Header name="My Walks" />
+            <Header name="Mes balades" />
             <Box
                 sx={{
                     display: "flex",

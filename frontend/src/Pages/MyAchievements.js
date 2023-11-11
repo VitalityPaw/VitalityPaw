@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 export default function MyAchievements() {
     return (
         <>
-            <Header name="Achievements" />
+            <Header name="Succès" />
             <div style={{
                 minHeight: "64vh", backgroundColor: "#FFF4EF"
             }}>

@@ -51,7 +51,7 @@ export default function NewWalk() {
 
     return (
         <>
-            <Header name="Nouvelle Balade" />
+            <Header name="Nouvelle balade" />
             <div style={{
                 minHeight: "64vh", backgroundColor: "#FFF4EF"
             }}>

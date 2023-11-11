@@ -22,7 +22,7 @@ export default function MyFriends() {
 
     return (
         <>
-            <Header name="My Friends" />
+            <Header name="Mes amis" />
             <div style={{
                 minHeight: "64vh", backgroundColor: "#FFF4EF"
             }}>
