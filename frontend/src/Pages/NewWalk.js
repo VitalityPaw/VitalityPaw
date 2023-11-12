@@ -176,24 +176,6 @@ const NewWalk = () => {
                             </DialogActions>
                         </Dialog>
 
-                        {/* Detailed summary dialog */}
-                        <Dialog open={openSummary} onClose={handleClose}>
-                            <DialogTitle>Résumé de la promenade</DialogTitle>
-                            <DialogContent>
-                                <DialogContentText>
-                                    Distance parcourue: 2,7km <br />
-                                    Durée de la promenade: {convertTime(10000000).toString()} <br />
-                                    Points obtenus: 1660 pts <br />
-                                    Bonus météo: 332 pts <br />
-                                </DialogContentText>
-                            </DialogContent>
-                            <DialogActions>
-                                <Button onClick={handleClose} color="primary">
-                                    Fermer
-                                </Button>
-                            </DialogActions>
-                        </Dialog>
-
                         {/* Toast container for react-toastify */}
                         <ToastContainer position="top-left" autoClose={3000} hideProgressBar />
                     </Stack>
