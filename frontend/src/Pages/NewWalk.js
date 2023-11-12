@@ -146,59 +146,43 @@ const NewWalk = () => {
                 </Stack>
             </div>
             <Footer />
-        </><>
-                <Header name="Nouvelle balade" />
-                <div style={{ minHeight: '64vh', backgroundColor: '#FFF4EF' }}>
-                    <Stack direction="column" justifyContent="space-around" alignItems="center" spacing={2}>
-                        <SimpleMap />
-                        <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                            <Button onClick={handleStartClick}>
-                                <PlayArrowIcon />
-                            </Button>
-                            <Button onClick={handleStopClick}>
-                                <StopIcon />
-                            </Button>
-                        </ButtonGroup>
+        </>
+        {/* "Hello" box with friend list */}
+        <Dialog open={openHello} onClose={handleClose}>
+            <DialogTitle>Notifier un ami</DialogTitle>
+            <DialogContent>
+                <DialogContentText>Choisissez un ami à notifier:</DialogContentText>
+                <FriendList friends={friendsDataWithAvatars} onFriendClick={handleFriendClick} />
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                    Annuler
+                </Button>
+            </DialogActions>
+        </Dialog>
 
-                        {/* "Hello" box with friend list */}
-                        <Dialog open={openHello} onClose={handleClose}>
-                            <DialogTitle>Notifier un ami</DialogTitle>
-                            <DialogContent>
-                                <DialogContentText>Choisissez un ami à notifier:</DialogContentText>
-                                <FriendList friends={friendsDataWithAvatars} onFriendClick={handleFriendClick} />
-                            </DialogContent>
-                            <DialogActions>
-                                <Button onClick={handleClose} color="primary">
-                                    Annuler
-                                </Button>
-                            </DialogActions>
-                        </Dialog>
+        {/* "Start Walk" box */}
+        <Dialog open={openStartWalk} onClose={handleClose}>
+            <DialogTitle>Commencer une promenade</DialogTitle>
+            <DialogContent>
+                <DialogContentText>Souhaitez-vous notifier vos amis ?</DialogContentText>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={handleNotifyFriend} color="primary">
+                    Notifier un ami
+                </Button>
+                <Button onClick={handleNotifyAllFriends} color="primary">
+                    Notifier tous mes amis
+                </Button>
+                <Button onClick={handleStartWalk} color="primary">
+                    Commencer
+                </Button>
+            </DialogActions>
+        </Dialog>
 
-                        {/* "Start Walk" box */}
-                        <Dialog open={openStartWalk} onClose={handleClose}>
-                            <DialogTitle>Commencer une promenade</DialogTitle>
-                            <DialogContent>
-                                <DialogContentText>Souhaitez-vous notifier vos amis ?</DialogContentText>
-                            </DialogContent>
-                            <DialogActions>
-                                <Button onClick={handleNotifyFriend} color="primary">
-                                    Notifier un ami
-                                </Button>
-                                <Button onClick={handleNotifyAllFriends} color="primary">
-                                    Notifier tous mes amis
-                                </Button>
-                                <Button onClick={handleStartWalk} color="primary">
-                                    Commencer
-                                </Button>
-                            </DialogActions>
-                        </Dialog>
-
-                        {/* Toast container for react-toastify */}
-                        <ToastContainer position="top-left" autoClose={3000} hideProgressBar />
-                    </Stack>
-                </div>
-                <Footer />
-            </></>
+        {/* Toast container for react-toastify */}
+        <ToastContainer position="top-left" autoClose={3000} hideProgressBar />
+    </>
     );
   };
 
