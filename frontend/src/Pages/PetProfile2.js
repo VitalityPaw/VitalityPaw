@@ -41,7 +41,7 @@ export default function PetProfile() {
 
     return (
         <>
-            <Header name="Rocky" />
+            <Header name="Toto" />
             <Box
                 sx={{
                     display: "flex",
@@ -82,11 +82,11 @@ export default function PetProfile() {
                         alignItems="center"
                         spacing={2}>
                         <h2>Informations</h2>
-                        <p>Age: 8 ans</p>
+                        <p>Age: 5 ans</p>
                         <p>Sexe: Mâle</p>
-                        <p>Numéro de puce: JAOWJ12938HD</p>
-                        <p>A rejoint le foyer: 12 mars 2017</p>
-                        <p>Race: Berger des Shetland</p>
+                        <p>Numéro de puce: </p>
+                        <p>A rejoint le foyer: 12 novembre 2023</p>
+                        <p>Race: Chihuahua</p>
                     </Stack>
                     <Stack
                         direction="column"
@@ -94,25 +94,14 @@ export default function PetProfile() {
                         alignItems="center"
                         spacing={2}>
                         <h2>Statistiques</h2>
-                        <p>Nombre de balades: 32</p>
-                        <p>Distance parcourue: 123 km</p>
-                        <p>Temps passé à marcher: 24h 12m</p>
+                        <p>Nombre de balades: 0</p>
+                        <p>Distance parcourue: 0 km</p>
+                        <p>Temps passé à marcher: 0h 0m</p>
                         <p>A été promené par:</p>
                         <ul>
-                            <li>John Doe</li>
-                            <li>Jane Doe</li>
-                            <li>John Smith</li>
+                            <li></li>
                         </ul>
                     </Stack>
-                </Stack>
-                <Stack
-                        direction="column"
-                        justifyContent="space-around"
-                        alignItems="center"
-                        spacing={2}>
-                        <Button variant="contained" color="primary" size="small" onClick={handleDownloadPDF} style={{ marginTop: '20px', display: 'inline-block' }}>
-                            Télécharger la fiche médicale
-                        </Button>
                 </Stack>
             </Box >
             <Footer />
