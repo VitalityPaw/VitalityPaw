@@ -23,21 +23,7 @@ Le répertoire `frontend` contient le code côté client de l'application Vitali
 
 ## Backend
 
-Le répertoire backend contient le code côté serveur, responsable de la gestion des requêtes, de la gestion des bases de données et de l'assurance du bon fonctionnement de l'application VitalityPaw.
-
-### Pour commencer
-
-1. Accédez au répertoire `backend`.
-   ```bash
-   cd backend
-
-2. Installez les dépendances
-   npm install
-
-3. Lancez le serveur de développement
-   npm start
-
-4. Ouvrez http://localhost:3000 dans votre navigateur pour visualiser l'application.
+Le répertoire backend contient le code côté serveur, responsable de la gestion des requêtes, de la gestion des bases de données et de l'assurance du bon fonctionnement de l'application VitalityPaw. Il n'a pas été utilisé pour la démonstration.
 
 
 ## Fonctionnalités
