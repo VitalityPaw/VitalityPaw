@@ -92,6 +92,44 @@ const NewWalk = () => {
       };
   
     return (
+        <>
+            <Header name="Nouvelle balade" />
+            <div style={{
+                minHeight: "64vh", backgroundColor: "#FFF4EF"
+            }}>
+                <Stack
+                    direction="column"
+                    justifyContent="space-around"
+                    alignItems="center"
+                    spacing={2}
+                >
+                    <SimpleMap />
+                    <ButtonGroup variant="contained" aria-label="outlined primary button group">
+                        <Button onClick={handleStartClick}><PlayArrowIcon /></Button>
+                        <Button onClick={handleStopClick}><StopIcon /></Button>
+                    </ButtonGroup>
+
+                    <Dialog open={open} onClose={handleClose}>
+                        <DialogTitle>Résumé de la promenade</DialogTitle>
+                        <DialogContent>
+                            <DialogContentText>
+                                Distance parcourue: 2,7km <br />
+                                Durée de la promenade: {convertTime(10000000).toString()} <br />
+                                Récompense: 166 XP <br />
+                                Bonus météo: 33 XP <br />
+                                Total: 199XP <br />
+                            </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleClose} color="primary">
+                                Fermer
+                            </Button>
+                        </DialogActions>
+                    </Dialog>
+                </Stack>
+            </div>
+            <Footer />
+        </>
       <>
         <Header name="Nouvelle balade" />
         <div style={{ minHeight: '64vh', backgroundColor: '#FFF4EF' }}>

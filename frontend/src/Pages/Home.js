@@ -5,8 +5,8 @@ import rocky from "../Images/rocky.png";
 import rockywithhat from "../Images/rockywithhat.png";
 
 export default function Home(props) {
-
     let hat = props.hat;
+    let xp = hat ? 800 : 1000; // Set XP based on whether the hat is displayed
 
     return (
         <div style={{
@@ -17,6 +17,11 @@ export default function Home(props) {
             <div style={{
                 minHeight: "64vh", backgroundColor: "#FFF4EF"
             }}>
+                <h1 style={{ 
+                    textAlign:"center", fontSize:"80px", marginTop:"10px"
+                }}>{xp} <span style={{
+                    fontSize:"50px"
+                }}>XP</span></h1>
                 <a href="/pet-profile">
                     <img src={hat ? rockywithhat : rocky} alt="Rocky" style={{
                         maxHeight: "40vh", display: "block", marginLeft: "auto", marginRight: "auto"
