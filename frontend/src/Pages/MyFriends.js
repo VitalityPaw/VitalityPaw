@@ -4,7 +4,8 @@ import Footer from "../Components/Footer";
 import Stack from '@mui/material/Stack';
 import Friend from "../Components/Friend";
 import { Box } from '@mui/system';
-
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 
 export default function MyFriends() {
     const friendsData = [
@@ -20,36 +21,70 @@ export default function MyFriends() {
         { number: 10, name: 'Charlie', xp: 200 },
     ];
 
+    const globalLeaderboardData = [
+        { number: 1, name: 'Hunter', xp: 3432 },
+        { number: 2, name: 'Hachi', xp: 3200 },
+        { number: 3, name: 'Sasha', xp: 3104 },
+        { number: 4, name: 'Ollie', xp: 3065 },
+        { number: 5, name: 'Rio', xp: 3064 },
+        { number: 6, name: 'Pépite', xp: 2000 },
+        { number: 7, name: 'Frida', xp: 1924 },
+        { number: 8, name: 'Zara', xp: 1910 },
+        { number: 9, name: 'Rex', xp: 1874 },
+        { number: 10, name: 'Tobi', xp: 1843 },
+    ];
+
+    const [tabValue, setTabValue] = React.useState(0);
+
+    const handleChangeTab = (event, newValue) => {
+        setTabValue(newValue);
+    };
+
     return (
         <>
-            <Header name="Mes amis" />
+            <Header name="Classement" />
             <div style={{
                 minHeight: "64vh", backgroundColor: "#FFF4EF"
             }}>
                 <Box
-                sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    height: "64vh",
-                    overflow: "hidden",
-                    overflowY: "scroll",
-                    backgroundColor: "#FFF4EF"
-                }}
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "64vh",
+                        overflow: "hidden",
+                        overflowY: "scroll",
+                        backgroundColor: "#FFF4EF"
+                    }}
                 >
-                    <Stack
-                    direction="column"
-                    justifyContent="center"
-                    alignItems="center"
-                    spacing={3}
+                    <Tabs
+                        value={tabValue}
+                        onChange={handleChangeTab}
+                        aria-label="leaderboard tabs"
+                        sx={{ margin: "auto", marginBottom: "10px" }}  // Center the tabs
                     >
-                        
-                        {friendsData.map((friend) => (
-                            <Friend number={friend.number} name={friend.name} xp={friend.xp} />
-                        ))}
+                        <Tab label="Amis" />
+                        <Tab label="Classement Global" />
+                    </Tabs>
+
+                    <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="center"
+                        spacing={3}
+                    >
+                        {tabValue === 0 && (
+                            friendsData.map((friend) => (
+                                <Friend key={friend.number} number={friend.number} name={friend.name} xp={friend.xp} />
+                            ))
+                        )}
+                        {tabValue === 1 && (
+                            globalLeaderboardData.map((player) => (
+                                <Friend key={player.number} number={player.number} name={player.name} xp={player.xp} />
+                            ))
+                        )}
                     </Stack>
                 </Box>
             </div>
-
             <Footer />
         </>
     );

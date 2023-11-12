@@ -18,6 +18,9 @@ import pup7 from "../Images/rsc/labrador.png";
 import pup8 from "../Images/rsc/smiley_dog.png";
 import pup9 from "../Images/rsc/bernese.png";
 import pup10 from "../Images/rsc/bernese_2.png";
+import australien from "../Images/australien.png";
+import mastiff from "../Images/mastiff.png";
+import pharaon from "../Images/pharaon.png";
 
 const Friend = ({ number, name, xp }) => {
   let cupImage;
@@ -66,6 +69,12 @@ const Friend = ({ number, name, xp }) => {
       pupAvatar = pup10;
       break;
   }
+
+  if (name == 'Hunter') {pupAvatar = australien;}
+  if (name == 'Hachi') {pupAvatar = mastiff;}
+  if (name == 'Sasha') {pupAvatar = pharaon;}
+  if (name == 'Ollie') {pupAvatar = pup7;}
+  if (name == 'Rio') {pupAvatar = pup8;}
 
   const avatarStyle = number === 6 ? { transform: 'scale(2)' } : {};
 
