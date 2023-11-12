@@ -7,7 +7,7 @@ import Achievement from "../Components/Achievement";
 export default function MyAchievements() {
     const achievementData = [
         { name:"Chien de l'année", description:"Tu t'es fait des amis et a découvert de nouveaux lieux", level: 1},
-        { name:"Sage... ou pas !", description:"Tu as fait 5 bêtises", level: 3},
+        { name:"Sage... ou pas !", description:"Tu as fait que 5 bêtises", level: 3},
         { name:"Conquérant", description:"Tu as découvert 5 nouveaux lieux", level: 2},
         { name:"Amical", description:"Tu t'es fait 10 amis en une semaine", level: 1},
         { name:"Champion", description:"Tu as appris 2 tricks ", level: 2},
