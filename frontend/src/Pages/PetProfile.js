@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import bowtie from "../Images/bowtie.png";
 import hat from "../Images/hat.png";
 import sunglasses from "../Images/sunglasses.png";
+import dogfood from "../Images/dog_food.png";
 
 export default function PetProfile() {
     const handleDownloadPDF = async () => {
@@ -72,6 +73,17 @@ export default function PetProfile() {
                 </div>
                 <Stack
                     direction="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    spacing={2}
+                >
+                    <SkinItem image={dogfood} name="-10% chez Royal Canin" price="1500" />
+                </Stack>
+                <div style={{ marginLeft: "20vw", marginRight: "20vw", marginTop: "2vh", marginBottom: "2vh" }}>
+                    <Divider />
+                </div>
+                <Stack
+                    direction="row"
                     justifyContent="space-around"
                     alignItems="center"
                     spacing={2}
@@ -106,13 +118,15 @@ export default function PetProfile() {
                     </Stack>
                 </Stack>
                 <Stack
-                        direction="column"
-                        justifyContent="space-around"
-                        alignItems="center"
-                        spacing={2}>
-                        <Button variant="contained" color="primary" size="small" onClick={handleDownloadPDF} style={{ marginTop: '20px', display: 'inline-block' }}>
-                            Télécharger la fiche médicale
-                        </Button>
+                    direction="column"
+                    justifyContent="space-around"
+                    alignItems="center"
+                    spacing={2}
+                    marginBottom={2}
+                >
+                    <Button variant="contained" color="primary" size="small" onClick={handleDownloadPDF} style={{ marginTop: '20px', display: 'inline-block' }}>
+                        Télécharger la fiche médicale
+                    </Button>
                 </Stack>
             </Box >
             <Footer />
