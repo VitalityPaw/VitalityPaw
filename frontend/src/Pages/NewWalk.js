@@ -22,33 +22,33 @@ const NewWalk = () => {
     let startTime;
     let endTime;
     let walkDuration;
-  
+
     const [openSummary, setOpenSummary] = React.useState(false);
     const [openHello, setOpenHello] = React.useState(false);
     const [openStartWalk, setOpenStartWalk] = React.useState(false);
-  
+
     const convertTimeToDate = (time) => {
       let date = new Date(time);
       return date;
     };
-  
+
     const convertTime = (time) => {
       let hours = Math.floor(time / 3600000);
       let minutes = Math.floor((time - hours * 3600000) / 60000);
       return `${hours}h ${minutes}m`;
     };
-  
+
     const friendsDataWithAvatars = [
       { number: 1, name: 'Fluffy', xp: 2000, avatar: pup1 },
       // ... other friends with avatars ...
     ];
-  
+
     const handleStartClick = () => {
       startTime = Date.now();
       console.log(convertTimeToDate(startTime).toString());
       setOpenStartWalk(true); // Open the "Start Walk" box
     };
-  
+
     const handleStopClick = () => {
       endTime = Date.now();
       console.log(convertTimeToDate(endTime).toString());
@@ -56,41 +56,58 @@ const NewWalk = () => {
       console.log(convertTime(walkDuration));
       setOpenSummary(true); // Open the detailed summary dialog
     };
-  
+
     const handleClose = () => {
       setOpenSummary(false);
       setOpenHello(false);
       setOpenStartWalk(false);
     };
-  
+
     const handleNotifyFriend = () => {
       // Logic to notify a specific friend
       console.log('Notifier un ami');
       // Display a dialog with the friend list
       setOpenHello(true);
     };
-  
+
     const handleFriendClick = (friend) => {
       // Logic to send the notification to the selected friend
       console.log(`Notifying ${friend.name}`);
       toast.success(`${friend.name} a été notifié, bonne balade !`); // Display a success toast
       handleClose(); // Close the dialog
     };
-  
+
     const handleNotifyAllFriends = () => {
       // Logic to notify all friends
       console.log('Notifying all friends');
       toast.success('Tous vos amis ont été notifiés, bonne balade !'); // Display a success toast
       handleClose(); // Close the box
     };
-  
+
     const handleStartWalk = () => {
         // Logic to start the walk
         console.log('Starting the walk');
         toast.success('Votre promenade a commencé !'); // Display an info toast
         handleClose(); // Close the box
-      };
-  
+    };
+
+    // Function to handle 'n' key press
+    const handleKeyPress = (event) => {
+        if (event.key === 'n') {
+            toast.success(`Pépite se promène, rejoignez-le !`); // Call the function to show the notification
+        }
+    };
+
+    // Use useEffect to add the event listener
+    React.useEffect(() => {
+        window.addEventListener('keydown', handleKeyPress);
+
+        // Remove the event listener on component unmount
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        };
+    }, []); // Empty dependency array to ensure it only runs once on mount
+
     return (
         <><>
             <Header name="Nouvelle balade" />
@@ -184,5 +201,5 @@ const NewWalk = () => {
             </></>
     );
   };
-  
+
   export default NewWalk;
