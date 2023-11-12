@@ -91,13 +91,6 @@ const NewWalk = () => {
         handleClose(); // Close the box
     };
 
-    const handleJoinFriend = () => {
-        // Logic to notify a specific friend
-        console.log('Notifier un ami');
-        // Display a dialog with the friend list
-        setOpenHello(true);
-      };
-
     // Function to handle 'n' key press
     const handleKeyPress = (event) => {
         if (event.key === 'n') {
