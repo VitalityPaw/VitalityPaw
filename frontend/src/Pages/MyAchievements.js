@@ -6,12 +6,12 @@ import Achievement from "../Components/Achievement";
 
 export default function MyAchievements() {
     const achievementData = [
-        { name:"Chien de l'année", level: 1},
-        { name:"Sage", level: 3},
-        { name:"Conquérant", level: 2},
-        { name:"Amicale", level: 1},
-        { name:"Champion", level: 2},
-        { name:"Noctambule", level: 0},
+        { name:"Chien de l'année", description:"Tu t'es fait des amis et a découvert de nouveaux lieux", level: 1},
+        { name:"Sage", description:"Tu as fait 5 bétises", level: 3},
+        { name:"Conquérant", description:"Tu as découvert 5 nouveaux lieux", level: 2},
+        { name:"Amicale", description:"Tu t'es fait 20 amis en une semaine", level: 1},
+        { name:"Champion", description:"Tu as appris 2 tricks ", level: 2},
+        { name:"Noctambule", description:"Tu as fais 1 ballade la nuit", level: 0},
     ];
 
     return (
@@ -23,10 +23,10 @@ export default function MyAchievements() {
                     <Stack direction="column"
                         justifyContent="center"
                         alignItems="center"
-                        spacing={3}>
+                        spacing={5}>
                     </Stack>
                         {achievementData.map((achievement) => (
-                            <Achievement name={achievement.name} level={achievement.level}/>
+                            <Achievement name={achievement.name} description={achievement.description} level={achievement.level}/>
                         ))}
             </div>
             <Footer />
