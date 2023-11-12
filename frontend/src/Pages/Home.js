@@ -17,6 +17,11 @@ export default function Home(props) {
             <div style={{
                 minHeight: "64vh", backgroundColor: "#FFF4EF"
             }}>
+                <h1 style={{ 
+                    textAlign:"center", fontSize:"80px", marginTop:"10px"
+                }}>4500 <span style={{
+                    fontSize:"50px"
+                }}>points</span></h1>
                 <a href="/pet-profile">
                     <img src={hat ? rockywithhat : rocky} alt="Rocky" style={{
                         maxHeight: "40vh", display: "block", marginLeft: "auto", marginRight: "auto"
