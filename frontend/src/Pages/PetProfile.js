@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Footer from "../Components/Footer";
@@ -8,6 +9,10 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import SkinItem from "../Components/SkinItem";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import TextField from '@mui/material/TextField';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import bowtie from "../Images/bowtie.png";
 import hat from "../Images/hat.png";
@@ -38,6 +43,30 @@ export default function PetProfile() {
         } catch (error) {
             console.error('Erreur lors du téléchargement du fichier PDF', error);
         }
+    };
+
+    const [formData, setFormData] = useState({
+        name: "",
+        age: "",
+        breed: "",
+    });
+
+    const [isDialogOpen, setDialogOpen] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Add logic to handle form submission, for example, sending data to an API
+        console.log("Form submitted:", formData);
+        toast.success(`Informations ajoutées au dossier médical !`); // Display a success toast
+        setDialogOpen(false); // Close the dialog after submitting
+    };
+
+    const handleOpen = () => {
+        setDialogOpen(true);
+    };
+
+    const handleClose = () => {
+        setDialogOpen(false);
     };
 
     return (
@@ -118,17 +147,45 @@ export default function PetProfile() {
                     </Stack>
                 </Stack>
                 <Stack
-                    direction="column"
+                    direction="row"
                     justifyContent="space-around"
                     alignItems="center"
                     spacing={2}
                     marginBottom={2}
                 >
+
+                    <Button variant="contained" color="primary" size="small" onClick={handleOpen} style={{ marginTop: '20px', display: 'inline-block' }}>
+                        Ajouter une donnée médicale
+                    </Button>
+                    {/* Dialog for the popup */}
+                    <Dialog open={isDialogOpen} onClose={handleClose}>
+                        <DialogTitle>Ajouter une donnée médicale</DialogTitle>
+                        <DialogContent>
+                            {/* Content for your popup */}
+                            <TextField
+                                variant="outlined"
+                                margin="normal"
+                                fullWidth
+                                id="medical-data"
+                                label="Donnée médicale"
+                                name="medicalData"
+                                // Add appropriate value and onChange
+                            />
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleClose}>Annuler</Button>
+                            <Button onClick={handleSubmit} color="primary">
+                                Ajouter
+                            </Button>
+                        </DialogActions>
+                    </Dialog>
                     <Button variant="contained" color="primary" size="small" onClick={handleDownloadPDF} style={{ marginTop: '20px', display: 'inline-block' }}>
                         Télécharger la fiche médicale
                     </Button>
                 </Stack>
             </Box >
+            {/* Toast container for react-toastify */}
+            <ToastContainer position="top-left" autoClose={3000} hideProgressBar />
             <Footer />
         </>
     );
