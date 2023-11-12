@@ -75,6 +75,7 @@ const Friend = ({ number, name, xp }) => {
   if (name == 'Sasha') {pupAvatar = pharaon;}
   if (name == 'Ollie') {pupAvatar = pup7;}
   if (name == 'Rio') {pupAvatar = pup8;}
+  if (name == 'Pépite') {pupAvatar = pup1;}
 
   const avatarStyle = number === 6 ? { transform: 'scale(2)' } : {};
 
