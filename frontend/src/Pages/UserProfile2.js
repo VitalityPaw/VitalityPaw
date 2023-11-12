@@ -56,11 +56,21 @@ export default function UserProfile() {
                         justifyContent="space-around"
                         alignItems="center"
                         spacing={2}>
-                        <h2>Chiens</h2>
                         <p>Rocky</p>
                         <img src={rocky} alt="logo" style={{
-                            maxHeight: "15vh", display: "block", marginLeft: "auto", marginRight: "auto"
+                            maxHeight: "15vh", display: "block", marginLeft: "auto"
                         }} onClick={() => { window.location.href = "/pet-profile" }}
+                        />
+                    </Stack>
+                    <Stack
+                        direction="column"
+                        justifyContent="space-around"
+                        alignItems="center"
+                        spacing={2}>
+                        <p>Toto</p>
+                        <img src={rocky} alt="logo" style={{
+                            maxHeight: "15vh", display: "block", marginRight: "auto"
+                        }} onClick={() => { window.location.href = "/pet-profile-2" }}
                         />
                     </Stack>
                 </Stack>

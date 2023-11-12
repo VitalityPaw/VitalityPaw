@@ -12,39 +12,13 @@ import Button from '@mui/material/Button';
 import { Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
+import dogfood from "../Images/dog_food.png";
 import bowtie from "../Images/bowtie.png";
 import hat from "../Images/hat.png";
 import sunglasses from "../Images/sunglasses.png";
-import dogfood from "../Images/dog_food.png";
 
 export default function PetProfile() {
-    const handleDownloadPDF = async () => {
-        try {
-            const response = await fetch("/fiche-medicale.pdf");
-            const blob = await response.blob();
-
-            // Crée un lien temporaire pour le téléchargement du fichier
-            const url = window.URL.createObjectURL(new Blob([blob]));
-            const link = document.createElement('a');
-            link.href = url;
-            link.setAttribute('download', 'fiche-medicale.pdf');
-
-            // Ajoute le lien au document
-            document.body.appendChild(link);
-
-            // Déclenche le téléchargement
-            link.click();
-
-            // Nettoie les ressources
-            window.URL.revokeObjectURL(url);
-            document.body.removeChild(link);
-        } catch (error) {
-            console.error('Erreur lors du téléchargement du fichier PDF', error);
-        }
-    };
-
     const [formData, setFormData] = useState({
         name: "",
         age: "",
@@ -71,7 +45,7 @@ export default function PetProfile() {
 
     return (
         <>
-            <Header name="Rocky" />
+            <Header name="Toto" />
             <Box
                 sx={{
                     display: "flex",
@@ -116,6 +90,7 @@ export default function PetProfile() {
                     justifyContent="space-around"
                     alignItems="center"
                     spacing={2}
+                    marginBottom={2}
                 >
                     <Stack
                         direction="column"
@@ -123,11 +98,11 @@ export default function PetProfile() {
                         alignItems="center"
                         spacing={2}>
                         <h2>Informations</h2>
-                        <p>Age: 8 ans</p>
+                        <p>Age: 5 ans</p>
                         <p>Sexe: Mâle</p>
-                        <p>Numéro de puce: JAOWJ12938HD</p>
-                        <p>A rejoint le foyer: 12 mars 2017</p>
-                        <p>Race: Berger des Shetland</p>
+                        <p>Numéro de puce: </p>
+                        <p>A rejoint le foyer: 12 novembre 2023</p>
+                        <p>Race: Chihuahua</p>
                     </Stack>
                     <Stack
                         direction="column"
@@ -135,14 +110,12 @@ export default function PetProfile() {
                         alignItems="center"
                         spacing={2}>
                         <h2>Statistiques</h2>
-                        <p>Nombre de balades: 32</p>
-                        <p>Distance parcourue: 123 km</p>
-                        <p>Temps passé à marcher: 24h 12m</p>
+                        <p>Nombre de balades: 0</p>
+                        <p>Distance parcourue: 0 km</p>
+                        <p>Temps passé à marcher: 0h 0m</p>
                         <p>A été promené par:</p>
                         <ul>
-                            <li>John Doe</li>
-                            <li>Jane Doe</li>
-                            <li>John Smith</li>
+                            <li></li>
                         </ul>
                     </Stack>
                 </Stack>
@@ -179,9 +152,6 @@ export default function PetProfile() {
                             </Button>
                         </DialogActions>
                     </Dialog>
-                    <Button variant="contained" color="primary" size="small" onClick={handleDownloadPDF} style={{ marginTop: '20px', display: 'inline-block' }}>
-                        Télécharger la fiche médicale
-                    </Button>
                 </Stack>
             </Box >
             {/* Toast container for react-toastify */}

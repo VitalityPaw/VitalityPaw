@@ -3,7 +3,6 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Stack from '@mui/material/Stack';
 import Achievement from "../Components/Achievement";
-import { Box } from '@mui/system';
 
 export default function MyAchievements() {
     const achievementData = [
