@@ -19,7 +19,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<App hat={false} />} />
         <Route path="/my-achievements" element={<MyAchievements />} />
         <Route path="/my-friends" element={<MyFriends />} />
         <Route path="/my-walks" element={<MyWalks />} />
@@ -30,6 +30,8 @@ export default function Router() {
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/user-profile-2" element={<UserProfile2 />} />
         <Route path="/add-pet" element={<AddPet />} />
+        <Route path="/hat" element={<App hat={true} />} />
+        <Route path="/user-profile" element={<UserProfile />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </BrowserRouter>
