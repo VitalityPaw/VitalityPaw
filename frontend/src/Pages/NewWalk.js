@@ -73,8 +73,9 @@ export default function NewWalk() {
                             <DialogContentText>
                                 Distance parcourue: 2,7km <br />
                                 Durée de la promenade: {convertTime(10000000).toString()} <br />
-                                Points obtenus: 1660 pts <br />
-                                Bonus météo: 332 pts <br />
+                                Récompense: 166 XP <br />
+                                Bonus météo: 33 XP <br />
+                                Total: 199XP <br />
                             </DialogContentText>
                         </DialogContent>
                         <DialogActions>
