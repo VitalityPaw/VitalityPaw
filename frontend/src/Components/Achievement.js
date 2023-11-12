@@ -12,16 +12,16 @@ const Achievement = ({ name, level}) => {
     ];
     let cupStyle;
 
-    if (level == 1) {
+    if (level === 1) {
         cupStyle = [styles[0], styles[0], styles[0]];
     }
-    if (level == 2) {
+    if (level === 2) {
         cupStyle = [styles[0], styles[0], styles[1]];
     }
-    if (level == 3) {
+    if (level === 3) {
         cupStyle = [styles[0], styles[1], styles[1]];
     }
-    if (level == 0) {
+    if (level === 0) {
         cupStyle = [styles[1], styles[1], styles[1]];
     }
 
